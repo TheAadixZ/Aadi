@@ -36,6 +36,12 @@ This bot will send back the document/file/pic/video/image/text that you forward,
 async def start(lel, message):
     await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm any forward tag remover // anonymize bot! I can send the file which you sended to me, without forward tag..!**", reply_markup=button)
 
+@app.on_callback_query()
+async def button(app, update):
+    k_data = update.data
+    if "Help" in k:
+       await update.message.delete()
+
 @app.on_message(filters.private)
 async def copy(fuck, message):
     try:
