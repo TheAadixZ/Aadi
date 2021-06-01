@@ -17,9 +17,10 @@ BOT_TOKEN = "1891306874:AAFwwdIcAAoW47QEnVvKk4btVbCNT-62Lmw"
 
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-start_but = InlineKeyboardMarkup([
-                [InlineKeyboardButton(text="Help", callback_data="Help"),
-                InlineKeyboardButton(text="Join channel", url="t.me/BotzCity",)]])
+start_but = [[
+              InlineKeyboardButton(text="Help", callback_data="Help"),
+              InlineKeyboardButton(text="Updates", url="t.me/BotzCity")
+            ]]
 
 @app.on_callback_query(filters.regex(pattern="Help"))
 async def data(client, query):
