@@ -38,7 +38,8 @@ async def start(lel, message):
 
 @app.on_message(filters.command(["help"]))
 async def help(ha, message):
-    await app.send_message(message.chat.id, 
+    await app.send_message(message.chat.id, """**Help\n
+This bot will send back the document/file/pic/video/image/text that you forward, back to you, so that the forwarded from tag is removed and it looks like it's forwarded from the bot!!\n\nMade with ❤️ by @BotzCity**""") 
 
 @app.on_callback_query()
 async def button(app, update):
