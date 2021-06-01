@@ -27,11 +27,6 @@ start_but = [[
             ]]
 button = InlineKeyboardMarkup(start_but)
 
-@app.on_callback_query(filters.regex(pattern="Help"))
-async def data(client, query):
-  await query.edit_message_text("""**Help\n
-This bot will send back the document/file/pic/video/image/text that you forward, back to you, so that the forwarded from tag is removed and it looks like it's forwarded from the bot!!\n\nMade with ❤️ by @BotzCity**""")
-
 @app.on_message(filters.command(["start"]))
 async def start(lel, message):
     await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm any forward tag remover // anonymize bot! I can send the file which you sended to me, without forward tag..!**", reply_markup=button)
@@ -43,9 +38,15 @@ This bot will send back the document/file/pic/video/image/text that you forward,
 
 @app.on_callback_query()
 async def button(app, update):
-    k_data = update.data
+    k = update.data
     if "Help" in k:
        await update.message.delete()
+       await help(app, update.message)
+    elif "close" in k:
+       await update.message.delete()
+    elif "home" in k:
+       await update.message.delete()
+       await start(app, update.message)
 
 @app.on_message(filters.private)
 async def copy(fuck, message):
