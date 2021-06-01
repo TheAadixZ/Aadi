@@ -22,9 +22,10 @@ start_but = [[
               InlineKeyboardButton(text="Updates", url="t.me/BotzCity")
             ],
             [
-              InlineKeyboardButton(text="Developer",url="t.me/Alain_xD")
-              InlineKeyboardButton(text="Close",callback_data="close"),
+              InlineKeyboardButton(text="Developer", url="t.me/Alain_xD")
+              InlineKeyboardButton(text="Close", callback_data="close")
             ]]
+
 button = InlineKeyboardMarkup(start_but)
 
 @app.on_message(filters.command(["start"]))
