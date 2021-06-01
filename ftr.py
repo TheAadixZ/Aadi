@@ -17,14 +17,14 @@ BOT_TOKEN = "1891306874:AAFwwdIcAAoW47QEnVvKk4btVbCNT-62Lmw"
 
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-start_but = [
-              InlineKeyboardButton(text="Help", callback_data="Help"),
-              InlineKeyboardButton(text="Updates", url="t.me/BotzCity")
-            ],
-            [
-              InlineKeyboardButton(text="Developer", url="t.me/Alain_xD")
-              InlineKeyboardButton(text="Close", callback_data="close")
-            ]
+start_but = [[
+        InlineKeyboardButton('Hᴇʟᴘ', callback_data='Help'),
+        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+    ],
+    [
+        InlineKeyboardButton('Dᴇᴠᴇʟᴏᴘᴇʀ', url='https://t.me/Alain_xD'),
+        InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='t.me/BotzCity')
+    ]]
 
 button = InlineKeyboardMarkup(start_but)
 
