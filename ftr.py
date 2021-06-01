@@ -23,7 +23,7 @@ start_but = [[
             ],
             [
               InlineKeyboardButton(text="Developer",url="t.me/Alain_xD")
-              InlineKeyboardButton(text="Close",callback_data="close")
+              InlineKeyboardButton(text="Close",callback_data="close"),
             ]]
 button = InlineKeyboardMarkup(start_but)
 
