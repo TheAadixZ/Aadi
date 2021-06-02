@@ -11,9 +11,9 @@ import pyrogram
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-APP_ID = 2888382
-API_HASH = "908a8a13c87a6c1899f6e788a05d3d0d"
-BOT_TOKEN = "1891306874:AAFwwdIcAAoW47QEnVvKk4btVbCNT-62Lmw"
+APP_ID = os.environ.get("APP_ID")
+API_HASH = os.environ.get("API_HASH")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
