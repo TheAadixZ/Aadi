@@ -28,9 +28,11 @@ start_but = ([[
 
 button = InlineKeyboardMarkup(start_but)
 
+but = InlineKeyboardMarkup([[InlineKeyboardButton("Hᴇʟᴘ", callback_data="Help"), InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close")],[InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="t.me/BotzCity"), InlineKeyboardButton("Dᴇᴠᴇʟᴏᴘᴇʀ", url="t.me/Alain_xD")]])
+
 @app.on_message(filters.command(["start"]))
 async def start(lel, message):
-    await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm any forward tag remover // anonymize bot! I can send the file which you sended to me, without forward tag..!**", reply_markup=button)
+    await message.reply_text(f"**Hi** `{message.from_user.first_name}` **!\n\nI'm any forward tag remover // anonymize bot! I can send the file which you sended to me, without forward tag..!**", reply_markup=but)
 
 @app.on_message(filters.command(["help"]))
 async def help(ha, message):
