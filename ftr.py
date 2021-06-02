@@ -27,8 +27,7 @@ async def start(lel, message):
 
 @app.on_message(filters.command(["help"]))
 async def help(ha, message):
-    await app.send_message(message.chat.id, """**Help\n
-This bot will send back the document/file/pic/video/image/text that you forward, back to you, so that the forwarded from tag is removed and it looks like it's forwarded from the bot!!\n\nMade with ❤️ by @BotzCity**""", reply_markup=butt) 
+    await app.send_message(message.chat.id, """**There is nothing no more..!\nJust forward me any file // message and I will return it back without forwaded tag.\n\nMade with ❤️ by @BotzCity**""", reply_markup=butt) 
 
 @app.on_callback_query()
 async def button(app, update):
@@ -43,7 +42,7 @@ async def button(app, update):
        await start(app, update.message)
 
 @app.on_message(filters.private)
-async def copy(fuck, message):
+async def copy(sed, message):
     try:
        await message.copy(message.chat.id)
     except RCPError as lel:
@@ -51,7 +50,6 @@ async def copy(fuck, message):
        return
 
 
-print("Started your bot")
-print("Send file // any message and party")
+print("Started bot...! ") 
 print("Join @BotzCity for any help !")
 app.run()
