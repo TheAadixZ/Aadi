@@ -14,7 +14,7 @@
 
 ## Updates
 
-- **To get lastest updates on 🔛 New Bot join [this channel](t.me/BotzCity) **
+- **To get lastest updates on 🔛 New Bot join [this channel](t.me/BotzCity)**
 
 ## Credits
 
