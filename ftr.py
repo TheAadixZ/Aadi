@@ -17,18 +17,9 @@ BOT_TOKEN = "1891306874:AAFwwdIcAAoW47QEnVvKk4btVbCNT-62Lmw"
 
 app = pyrogram.Client("app", api_id=APP_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-start_but = ([[
-        InlineKeyboardButton('Hᴇʟᴘ', callback_data='Help'),
-        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
-    ],
-    [
-        InlineKeyboardButton('Dᴇᴠᴇʟᴏᴘᴇʀ', url='https://t.me/Alain_xD'),
-        InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='t.me/BotzCity')
-    ]])
-
-button = InlineKeyboardMarkup(start_but)
-
 but = InlineKeyboardMarkup([[InlineKeyboardButton("Hᴇʟᴘ", callback_data="Help"), InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close")],[InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="t.me/BotzCity"), InlineKeyboardButton("Dᴇᴠᴇʟᴏᴘᴇʀ", url="t.me/Alain_xD")]])
+butt = InlineKeyboardMarkup([[InlineKeyboardButton("Hᴏᴍᴇ", callback_data="home"), InlineKeyboardButton("Uᴘᴅᴀᴛᴇs", url="t.me/BotzCity")], [InlineKeyboardButton("Rᴇᴘᴏ", url="GitHub.com/BotzCity/ForwardTagRemover"), InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close")]])
+
 
 @app.on_message(filters.command(["start"]))
 async def start(lel, message):
@@ -37,7 +28,7 @@ async def start(lel, message):
 @app.on_message(filters.command(["help"]))
 async def help(ha, message):
     await app.send_message(message.chat.id, """**Help\n
-This bot will send back the document/file/pic/video/image/text that you forward, back to you, so that the forwarded from tag is removed and it looks like it's forwarded from the bot!!\n\nMade with ❤️ by @BotzCity**""") 
+This bot will send back the document/file/pic/video/image/text that you forward, back to you, so that the forwarded from tag is removed and it looks like it's forwarded from the bot!!\n\nMade with ❤️ by @BotzCity**""", reply_markup=butt) 
 
 @app.on_callback_query()
 async def button(app, update):
